@@ -1,0 +1,73 @@
+/* General container styling */
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styling */
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Main section styling */
+  .main {
+    padding: 20px;
+  }
+  
+  /* Form container styling */
+  .formContainer {
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styling */
+  .input {
+    display: block;
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Button styling */
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Task list styling */
+  .taskList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Task item styling */
+  .taskItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .taskItem input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  

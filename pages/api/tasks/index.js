@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from '../styles/Home.module.css'; // Import CSS module
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -36,40 +37,48 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Task Manager</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button onClick={addTask}>Add Task</button>
-      </div>
-      <ul>
-        {tasks.map(task => (
-          <li key={task._id}>
-            <input
-              type="text"
-              value={task.title}
-              onChange={(e) => updateTask(task._id, e.target.value, task.description)}
-            />
-            <input
-              type="text"
-              value={task.description}
-              onChange={(e) => updateTask(task._id, task.title, e.target.value)}
-            />
-            <button onClick={() => deleteTask(task._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>Task Manager</h1>
+      </header>
+      <main className={styles.main}>
+        <div className={styles.formContainer}>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className={styles.input}
+          />
+          <input
+            type="text"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className={styles.input}
+          />
+          <button onClick={addTask} className={styles.button}>Add Task</button>
+        </div>
+        <ul className={styles.taskList}>
+          {tasks.map(task => (
+            <li key={task._id} className={styles.taskItem}>
+              <input
+                type="text"
+                value={task.title}
+                onChange={(e) => updateTask(task._id, e.target.value, task.description)}
+                className={styles.input}
+              />
+              <input
+                type="text"
+                value={task.description}
+                onChange={(e) => updateTask(task._id, task.title, e.target.value)}
+                className={styles.input}
+              />
+              <button onClick={() => deleteTask(task._id)} className={styles.button}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </main>
     </div>
   );
 }
